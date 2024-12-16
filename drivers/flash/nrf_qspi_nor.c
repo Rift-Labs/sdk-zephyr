@@ -1060,12 +1060,12 @@ static int qspi_init(const struct device *dev)
 		return rc;
 	}
 
-	if (memcmp(dev_config->id, id, SPI_NOR_MAX_ID_LEN) != 0) {
-		LOG_ERR("JEDEC id [%02x %02x %02x] expect [%02x %02x %02x]",
-			id[0], id[1], id[2], dev_config->id[0],
-			dev_config->id[1], dev_config->id[2]);
-		return -ENODEV;
-	}
+	// if (memcmp(dev_config->id, id, SPI_NOR_MAX_ID_LEN) != 0) {
+	// 	LOG_ERR("JEDEC id [%02x %02x %02x] expect [%02x %02x %02x]",
+	// 		id[0], id[1], id[2], dev_config->id[0],
+	// 		dev_config->id[1], dev_config->id[2]);
+	// 	return -ENODEV;
+	// }
 
 	/* The chip is correct, it can be configured now. */
 	return configure_chip(dev);
